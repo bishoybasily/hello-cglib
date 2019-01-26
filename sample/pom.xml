@@ -14,5 +14,19 @@
     <artifactId>sample</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
 
+        <dependency>
+            <groupId>com.gmail.bishoybasily.demo.annotations</groupId>
+            <artifactId>annotations</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gmail.bishoybasily.demo.processor</groupId>
+            <artifactId>processor</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope> <!--needed only in compilation time-->
+        </dependency>
+
+    </dependencies>
 </project>
