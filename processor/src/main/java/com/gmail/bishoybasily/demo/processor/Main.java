@@ -17,17 +17,28 @@ public class Main {
         enhancer.setSuperclass(User.class);
         enhancer.setCallback(new MethodInterceptor() {
 
+            String x = "";
+
             @Override
             public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+
                 if (method.getName().equals("getName"))
                     return "bishoy";
                 if (method.getName().equals("getAge"))
                     return 26;
-                Object result = methodProxy.invokeSuper(o, args);
+
+                if (method.toString().equals(x)) {
+                    // do before logic
+                    Object result = methodProxy.invokeSuper(o, objects);
+                    // do after logic
+                    return result;
+                }
+
+                return methodProxy.invokeSuper(o, objects);
+
 
                 // do some interception here
 
-                return result;
             }
         });
         User user = (User) enhancer.create();

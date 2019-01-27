@@ -1,15 +1,14 @@
 package com.gmail.bishoybasily.demo.sample.repos;
 
 
-import com.gmail.bishoybasily.demo.sample.entities.User;
-
-import java.util.Collection;
-import java.util.Collections;
-
 public class RepositoryUsers {
 
-    public Collection<User> findAll() {
-        return Collections.emptyList();
+    public void findAll() {
+        System.out.println("Find all users");
+    }
+
+    public void findSingle() {
+        System.out.println("Find single user");
     }
 
 }
