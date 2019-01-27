@@ -211,12 +211,10 @@ public class MainProcessor extends AbstractProcessor {
 
                 });
 
-
         flush(PACKAGE_NAME, graphClass.build());
 
         return false;
     }
-
 
     private void defineField(String providerFieldName, TypeName providerType, TypeSpec.Builder graphClass) {
         FieldSpec.Builder providerField = FieldSpec.builder(providerType, providerFieldName)
