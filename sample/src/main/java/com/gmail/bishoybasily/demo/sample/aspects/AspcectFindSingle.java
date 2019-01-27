@@ -5,7 +5,7 @@ import com.gmail.bishoybasily.demo.annotations.Aspect;
 import com.gmail.bishoybasily.demo.annotations.Before;
 
 @Aspect
-public class Aspc2 {
+public class AspcectFindSingle {
 
     @Before("public void com.gmail.bishoybasily.demo.sample.repos.RepositoryUsers.findSingle()")
     public void beforeFindingSingle() {

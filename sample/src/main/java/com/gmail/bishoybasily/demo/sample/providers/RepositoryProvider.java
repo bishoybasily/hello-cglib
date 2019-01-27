@@ -5,7 +5,7 @@ import com.gmail.bishoybasily.demo.annotations.Provider;
 import com.gmail.bishoybasily.demo.sample.repos.RepositoryUsers;
 
 @Provider
-public class Prov {
+public class RepositoryProvider {
 
     @Bean
     public RepositoryUsers repositoryUsers() {

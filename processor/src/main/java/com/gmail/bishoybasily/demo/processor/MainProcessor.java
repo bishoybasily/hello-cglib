@@ -307,35 +307,3 @@ public class MainProcessor extends AbstractProcessor {
 
 }
 
-
-/*
-public RepositoryUsers repositoryUsers() {
-
-    if(repositoryUsers!=null){
-      //    repositoryUsers = prov().repositoryUsers();
-
-      Enhancer enhancer = new Enhancer();
-      enhancer.setSuperclass(RepositoryUsers.class);
-
-      enhancer.setCallback(new MethodInterceptor() {
-
-        @Override
-        public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-
-          // do before
-
-          Object result = methodProxy.invokeSuper(o, objects);
-
-          // do after
-
-          return result;
-        }
-      });
-
-      repositoryUsers = (RepositoryUsers) enhancer.create();
-    }
-
-
-    return repositoryUsers;
-  }
-*/

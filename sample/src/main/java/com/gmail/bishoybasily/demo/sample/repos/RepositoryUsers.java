@@ -4,11 +4,12 @@ package com.gmail.bishoybasily.demo.sample.repos;
 public class RepositoryUsers {
 
     public void findAll() {
-        System.out.println("Find all users");
+        System.out.println("Inside find all");
     }
 
     public void findSingle() {
-        System.out.println("Find single user");
+        System.out.println("Inside find single");
     }
 
 }
+
