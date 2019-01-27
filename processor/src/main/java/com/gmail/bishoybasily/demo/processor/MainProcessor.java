@@ -143,7 +143,6 @@ public class MainProcessor extends AbstractProcessor {
 
                                     } else {
 
-
                                         StringBuffer buffer = new StringBuffer();
 
                                         buffer.append("if ( this." + beanFieldName + " == null ) {").append("\n");
