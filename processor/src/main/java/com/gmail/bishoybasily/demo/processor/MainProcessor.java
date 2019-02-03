@@ -265,7 +265,7 @@ public class MainProcessor extends AbstractProcessor {
         try {
             JavaFile.builder(packageName, typeSpec).build().writeTo(filer);
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 

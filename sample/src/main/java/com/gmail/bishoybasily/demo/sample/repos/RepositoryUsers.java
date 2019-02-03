@@ -7,9 +7,5 @@ public class RepositoryUsers {
         System.out.println("Inside find all");
     }
 
-    public void findSingle() {
-        System.out.println("Inside find single");
-    }
-
 }
 

@@ -9,7 +9,6 @@ public class Main {
     public static void main(String[] args) {
         RepositoryUsers repositoryUsers = Graph.getInstance().repositoryUsers();
 
-        repositoryUsers.findSingle();
         repositoryUsers.findAll();
     }
 
