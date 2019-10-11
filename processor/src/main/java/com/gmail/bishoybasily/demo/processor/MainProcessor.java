@@ -5,7 +5,6 @@ import com.google.auto.service.AutoService;
 import com.squareup.javapoet.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
@@ -15,10 +14,7 @@ import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -139,11 +135,11 @@ public class MainProcessor extends AbstractProcessor {
                                                     });
                                         });
 
-                                Map<String, Set<Advice>> advicesMap = new HashMap<>();
+                                Map<String, List<Advice>> advicesMap = new HashMap<>();
 
                                 // build a map of advices grouped by the targeted method
                                 Stream.concat(beforeStream, afterStream).forEach(advice -> {
-                                    Set<Advice> adviceList = advicesMap.getOrDefault(advice.value, new HashSet<>());
+                                    List<Advice> adviceList = advicesMap.getOrDefault(advice.value, new ArrayList<>());
                                     adviceList.add(advice);
                                     advicesMap.put(advice.value, adviceList);
                                 });
@@ -220,7 +216,7 @@ public class MainProcessor extends AbstractProcessor {
      * @param beanType
      * @param graphClass
      */
-    private void defineFieldInitializerProxyMethod(Map<String, Set<Advice>> advicesMap, String beanFieldName, String beanClassName, TypeName beanType, TypeSpec.Builder graphClass) {
+    private void defineFieldInitializerProxyMethod(Map<String, List<Advice>> advicesMap, String beanFieldName, String beanClassName, TypeName beanType, TypeSpec.Builder graphClass) {
         // provide a proxy for this bean and intercept its methods execution to execute the before and after accordingly
 
         StringBuffer buffer = new StringBuffer();
@@ -336,7 +332,7 @@ public class MainProcessor extends AbstractProcessor {
 
     @Data
     @AllArgsConstructor
-    @EqualsAndHashCode(of = {"type", "value"})
+//    @EqualsAndHashCode(of = {"type", "value"})
     class Advice {
 
         private Type type;
